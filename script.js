@@ -1,193 +1,235 @@
 // ===============================
-// MOBILE MENU
+// PORTFOLIO SCRIPT - SHEIKH ABUBAKAR
 // ===============================
-
-const menuBtn = document.getElementById("menu-btn");
-const navLinks = document.querySelector(".nav-links");
-
-menuBtn.addEventListener("click", () => {
-    navLinks.classList.toggle("active");
-});
-
-// Close menu when clicking a navigation link
-document.querySelectorAll(".nav-links a").forEach(link => {
-    link.addEventListener("click", () => {
-        navLinks.classList.remove("active");
-    });
-});
-
-
-// ===============================
-// TYPING ANIMATION
-// ===============================
-
-const text = [
-    "Computer Science Student",
-    "Web Developer",
-    "Node.js Developer",
-    "Frontend Developer",
-    "Backend Developer"
-];
-
-let textIndex = 0;
-let charIndex = 0;
-
-const typing = document.getElementById("typing");
-
-function type() {
-
-    if (charIndex < text[textIndex].length) {
-
-        typing.textContent += text[textIndex].charAt(charIndex);
-
-        charIndex++;
-
-        setTimeout(type, 120);
-
-    } else {
-
-        setTimeout(erase, 1500);
-
-    }
-
-}
-
-function erase() {
-
-    if (charIndex > 0) {
-
-        typing.textContent = text[textIndex].substring(0, charIndex - 1);
-
-        charIndex--;
-
-        setTimeout(erase, 60);
-
-    } else {
-
-        textIndex++;
-
-        if (textIndex >= text.length) {
-
-            textIndex = 0;
-
-        }
-
-        setTimeout(type, 300);
-
-    }
-
-}
 
 document.addEventListener("DOMContentLoaded", () => {
 
-    if (text.length) {
+    // ===============================
+    // MOBILE MENU
+    // ===============================
 
-        setTimeout(type, 500);
+    const menuBtn = document.getElementById("menu-btn");
+    const navLinks = document.querySelector(".nav-links");
 
+    if (menuBtn && navLinks) {
+
+        menuBtn.addEventListener("click", () => {
+            navLinks.classList.toggle("active");
+
+            const icon = menuBtn.querySelector("i");
+
+            if (icon) {
+                if (navLinks.classList.contains("active")) {
+                    icon.classList.remove("fa-bars");
+                    icon.classList.add("fa-xmark");
+                } else {
+                    icon.classList.remove("fa-xmark");
+                    icon.classList.add("fa-bars");
+                }
+            }
+        });
+
+        // Close menu after clicking a link
+        document.querySelectorAll(".nav-links a").forEach(link => {
+            link.addEventListener("click", () => {
+                navLinks.classList.remove("active");
+
+                const icon = menuBtn.querySelector("i");
+
+                if (icon) {
+                    icon.classList.remove("fa-xmark");
+                    icon.classList.add("fa-bars");
+                }
+            });
+        });
     }
 
-});
 
+    // ===============================
+    // NAVBAR SCROLL EFFECT
+    // ===============================
 
-// ===============================
-// STICKY NAVBAR ON SCROLL
-// ===============================
+    const header = document.getElementById("header");
 
-window.addEventListener("scroll", () => {
+    function handleScroll() {
 
-    const header = document.querySelector("header");
-
-    if (window.scrollY > 50) {
-
-        header.style.background = "#161b22";
-
-        header.style.boxShadow = "0 0 15px rgba(0,217,255,.25)";
-
-    } else {
-
-        header.style.background = "rgba(13,17,23,.8)";
-
-        header.style.boxShadow = "none";
-
+        if (header) {
+            if (window.scrollY > 50) {
+                header.classList.add("scrolled");
+            } else {
+                header.classList.remove("scrolled");
+            }
+        }
     }
 
-});
+    window.addEventListener("scroll", handleScroll);
+
+    handleScroll();
 
 
-// ===============================
-// ACTIVE NAVIGATION
-// ===============================
+    // ===============================
+    // TYPING EFFECT
+    // ===============================
 
-const sections = document.querySelectorAll("section");
-const navItems = document.querySelectorAll(".nav-links a");
+    const typingElement = document.getElementById("typing");
 
-window.addEventListener("scroll", () => {
+    const roles = [
+        "Data Analyst",
+        "Generative AI Developer",
+        "Software Engineer",
+        "RAG Developer",
+        "AI Application Developer"
+    ];
 
-    let current = "";
+    let roleIndex = 0;
+    let charIndex = 0;
+    let isDeleting = false;
 
-    sections.forEach(section => {
+    function typeEffect() {
 
-        const sectionTop = section.offsetTop - 150;
-        const sectionHeight = section.clientHeight;
+        if (!typingElement) return;
 
-        if (pageYOffset >= sectionTop) {
+        const currentRole = roles[roleIndex];
 
-            current = section.getAttribute("id");
+        if (isDeleting) {
+            typingElement.textContent =
+                currentRole.substring(0, charIndex - 1);
 
+            charIndex--;
+        } else {
+            typingElement.textContent =
+                currentRole.substring(0, charIndex + 1);
+
+            charIndex++;
         }
 
-    });
+        let speed = isDeleting ? 50 : 100;
 
-    navItems.forEach(link => {
-
-        link.classList.remove("active");
-
-        if (link.getAttribute("href") === "#" + current) {
-
-            link.classList.add("active");
-
+        // Finished typing
+        if (!isDeleting && charIndex === currentRole.length) {
+            speed = 1500;
+            isDeleting = true;
         }
 
-    });
-
-});
-
-
-// ===============================
-// FADE-IN ANIMATION
-// ===============================
-
-const observer = new IntersectionObserver((entries) => {
-
-    entries.forEach(entry => {
-
-        if (entry.isIntersecting) {
-
-            entry.target.classList.add("show");
-
+        // Finished deleting
+        if (isDeleting && charIndex === 0) {
+            isDeleting = false;
+            roleIndex = (roleIndex + 1) % roles.length;
+            speed = 400;
         }
 
+        setTimeout(typeEffect, speed);
+    }
+
+    if (typingElement) {
+        typeEffect();
+    }
+
+
+    // ===============================
+    // ACTIVE NAVIGATION
+    // ===============================
+
+    const sections = document.querySelectorAll("section[id]");
+    const navItems = document.querySelectorAll(".nav-links a");
+
+    function updateActiveNav() {
+
+        let currentSection = "";
+
+        sections.forEach(section => {
+
+            const sectionTop = section.offsetTop - 150;
+            const sectionHeight = section.offsetHeight;
+
+            if (
+                window.scrollY >= sectionTop &&
+                window.scrollY < sectionTop + sectionHeight
+            ) {
+                currentSection = section.getAttribute("id");
+            }
+        });
+
+        navItems.forEach(link => {
+
+            link.classList.remove("active");
+
+            const href = link.getAttribute("href");
+
+            if (href === `#${currentSection}`) {
+                link.classList.add("active");
+            }
+        });
+    }
+
+    window.addEventListener("scroll", updateActiveNav);
+
+    updateActiveNav();
+
+
+    // ===============================
+    // SMOOTH SCROLL
+    // ===============================
+
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+
+        anchor.addEventListener("click", function (e) {
+
+            const targetId = this.getAttribute("href");
+
+            if (targetId === "#") return;
+
+            const target = document.querySelector(targetId);
+
+            if (target) {
+                e.preventDefault();
+
+                target.scrollIntoView({
+                    behavior: "smooth",
+                    block: "start"
+                });
+            }
+        });
     });
 
-}, {
-    threshold: 0.15
-});
 
-document.querySelectorAll("section").forEach(section => {
+    // ===============================
+    // REVEAL ANIMATION
+    // ===============================
 
-    section.classList.add("hidden");
+    const revealElements = document.querySelectorAll(
+        ".skill, .card, .education-card, .contact-item, .about-container"
+    );
 
-    observer.observe(section);
+    const observer = new IntersectionObserver(
+        (entries) => {
 
-});
+            entries.forEach(entry => {
+
+                if (entry.isIntersecting) {
+                    entry.target.classList.add("show");
+                }
+
+            });
+
+        },
+        {
+            threshold: 0.15
+        }
+    );
+
+    revealElements.forEach(element => {
+        element.classList.add("reveal");
+        observer.observe(element);
+    });
 
 
-// ===============================
-// SCROLL TO TOP
-// ===============================
+    // ===============================
+    // CONSOLE MESSAGE
+    // ===============================
 
-window.addEventListener("beforeunload", () => {
-
-    window.scrollTo(0, 0);
+    console.log(
+        "👋 Welcome to Sheikh Abubakar's Portfolio!"
+    );
 
 });
