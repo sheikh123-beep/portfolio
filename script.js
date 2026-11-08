@@ -2,17 +2,20 @@
    MOBILE MENU
 ========================================= */
 
-const menuIcon = document.querySelector('#menu-icon');
-const navbar = document.querySelector('.navbar');
+const menuToggle = document.getElementById('menu-toggle');
+const navbar = document.querySelector('.nav-links');
 
-if (menuIcon && navbar) {
+if (menuToggle && navbar) {
 
-    menuIcon.addEventListener('click', () => {
-
-        menuIcon.classList.toggle('bx-x');
-
+    menuToggle.addEventListener('click', () => {
         navbar.classList.toggle('active');
 
+        const icon = menuToggle.querySelector('i');
+
+        if (icon) {
+            icon.classList.toggle('fa-bars');
+            icon.classList.toggle('fa-xmark');
+        }
     });
 
 }
@@ -22,15 +25,49 @@ if (menuIcon && navbar) {
    CLOSE MENU AFTER CLICK
 ========================================= */
 
-document.querySelectorAll('.navbar a').forEach(link => {
+document.querySelectorAll('.nav-links a').forEach(link => {
 
     link.addEventListener('click', () => {
 
-        navbar.classList.remove('active');
+        if (navbar) {
+            navbar.classList.remove('active');
+        }
 
-        menuIcon.classList.remove('bx-x');
+        const icon = menuToggle?.querySelector('i');
+
+        if (icon) {
+            icon.classList.add('fa-bars');
+            icon.classList.remove('fa-xmark');
+        }
 
     });
+
+});
+
+
+/* =========================================
+   CLOSE MENU ON OUTSIDE CLICK
+========================================= */
+
+document.addEventListener('click', event => {
+
+    if (
+        navbar &&
+        menuToggle &&
+        !navbar.contains(event.target) &&
+        !menuToggle.contains(event.target)
+    ) {
+
+        navbar.classList.remove('active');
+
+        const icon = menuToggle.querySelector('i');
+
+        if (icon) {
+            icon.classList.add('fa-bars');
+            icon.classList.remove('fa-xmark');
+        }
+
+    }
 
 });
 
@@ -39,17 +76,12 @@ document.querySelectorAll('.navbar a').forEach(link => {
    STICKY HEADER
 ========================================= */
 
-const header = document.querySelector('.header');
+const header = document.querySelector('header');
 
 window.addEventListener('scroll', () => {
 
     if (header) {
-
-        header.classList.toggle(
-            'sticky',
-            window.scrollY > 100
-        );
-
+        header.classList.toggle('sticky', window.scrollY > 100);
     }
 
 });
@@ -75,11 +107,8 @@ if (typedElement && typeof Typed !== 'undefined') {
         ],
 
         typeSpeed: 70,
-
         backSpeed: 45,
-
         backDelay: 1200,
-
         loop: true
 
     });
@@ -93,7 +122,7 @@ if (typedElement && typeof Typed !== 'undefined') {
 
 const sections = document.querySelectorAll('section');
 
-const navLinks = document.querySelectorAll('.navbar a');
+const navLinks = document.querySelectorAll('.nav-links a');
 
 window.addEventListener('scroll', () => {
 
@@ -103,8 +132,7 @@ window.addEventListener('scroll', () => {
 
         const sectionTop = section.offsetTop - 150;
 
-        const sectionBottom =
-            sectionTop + section.offsetHeight;
+        const sectionBottom = sectionTop + section.offsetHeight;
 
         if (
             window.scrollY >= sectionTop &&
@@ -140,41 +168,45 @@ window.addEventListener('scroll', () => {
 ========================================= */
 
 const revealElements = document.querySelectorAll(
-    '.home-content, .home-image, .about-container, .skill, .card, .research-card, .education-card, .certification-card, .contact-item'
+    '.hero-content, .hero-image, .about-content, .skill-card, .project-card, .research-card, .education-card, .certification-card, .contact-card'
 );
 
-const observer = new IntersectionObserver(
+if ('IntersectionObserver' in window) {
 
-    (entries, observer) => {
+    const observer = new IntersectionObserver(
 
-        entries.forEach(entry => {
+        (entries, observer) => {
 
-            if (entry.isIntersecting) {
+            entries.forEach(entry => {
 
-                entry.target.classList.add('show');
+                if (entry.isIntersecting) {
 
-                observer.unobserve(entry.target);
+                    entry.target.classList.add('show');
 
-            }
+                    observer.unobserve(entry.target);
 
-        });
+                }
 
-    },
+            });
 
-    {
-        threshold: 0.12
-    }
+        },
 
-);
+        {
+            threshold: 0.12
+        }
+
+    );
 
 
-revealElements.forEach(element => {
+    revealElements.forEach(element => {
 
-    element.classList.add('reveal');
+        element.classList.add('reveal');
 
-    observer.observe(element);
+        observer.observe(element);
 
-});
+    });
+
+}
 
 
 /* =========================================
@@ -188,28 +220,6 @@ if (yearElement) {
     yearElement.textContent = new Date().getFullYear();
 
 }
-
-
-/* =========================================
-   CLOSE MENU ON OUTSIDE CLICK
-========================================= */
-
-document.addEventListener('click', event => {
-
-    if (
-        navbar &&
-        menuIcon &&
-        !navbar.contains(event.target) &&
-        !menuIcon.contains(event.target)
-    ) {
-
-        navbar.classList.remove('active');
-
-        menuIcon.classList.remove('bx-x');
-
-    }
-
-});
 
 
 /* =========================================
@@ -245,3 +255,10 @@ document.querySelectorAll('a[href^="#"]').forEach(anchor => {
     });
 
 });
+
+
+/* =========================================
+   CONSOLE MESSAGE
+========================================= */
+
+console.log('Sheikh Abubakar Portfolio Loaded Successfully!');
