@@ -5,134 +5,110 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <title>Sheikh Abubakar | Portfolio</title>
+    <meta name="description"
+        content="Sheikh Abubakar - AI Engineer, Generative AI Developer, RAG and LLM Developer and Full Stack Developer.">
+
+    <meta name="keywords"
+        content="AI Engineer, Generative AI, RAG, LLM, Machine Learning, Python, Full Stack Developer">
+
+    <meta name="author" content="Sheikh Abubakar">
+
+    <title>Sheikh Abubakar | AI Engineer & Developer</title>
 
     <!-- CSS -->
     <link rel="stylesheet" href="style.css">
 
-    <!-- Font Awesome -->
-    <link
-        rel="stylesheet"
-        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css"
-    >
+    <!-- Boxicons -->
+    <link href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css"
+        rel="stylesheet">
 
-    <!-- Google Font -->
-    <link
-        href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap"
-        rel="stylesheet"
-    >
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap"
+        rel="stylesheet">
+
 </head>
 
 <body>
 
-    <!-- ================= NAVBAR ================= -->
+    <!-- NAVBAR -->
 
-    <header id="header">
+    <header class="header">
 
-        <nav>
+        <a href="#home" class="logo">
+            SHEIKH <span>ABUBAKAR</span>
+        </a>
 
-            <div class="logo">
-                SHEIKH ABUBAKAR
-            </div>
+        <i class='bx bx-menu' id="menu-icon"></i>
 
-            <ul class="nav-links">
+        <nav class="navbar">
 
-                <li>
-                    <a href="#home">Home</a>
-                </li>
-
-                <li>
-                    <a href="#about">About</a>
-                </li>
-
-                <li>
-                    <a href="#skills">Skills</a>
-                </li>
-
-                <li>
-                    <a href="#projects">Projects</a>
-                </li>
-
-                <li>
-                    <a href="#education">Education</a>
-                </li>
-
-                <li>
-                    <a href="#contact">Contact</a>
-                </li>
-
-            </ul>
-
-            <div id="menu-btn">
-                <i class="fa-solid fa-bars"></i>
-            </div>
+            <a href="#home" class="active">Home</a>
+            <a href="#about">About</a>
+            <a href="#skills">Skills</a>
+            <a href="#projects">Projects</a>
+            <a href="#research">Research</a>
+            <a href="#education">Education</a>
+            <a href="#certifications">Certifications</a>
+            <a href="#contact">Contact</a>
 
         </nav>
 
     </header>
 
 
-    <!-- ================= HOME ================= -->
+    <!-- HOME SECTION -->
 
     <section class="home" id="home">
 
         <div class="home-content">
 
-            <p class="intro">
-                Hello, I'm
-            </p>
+            <h3>Hello, I'm</h3>
 
-            <h1>
-                Sheikh Abubakar
-            </h1>
+            <h1>Sheikh Abubakar</h1>
 
-            <h2>
-                <span id="typing">Data Analyst</span>
-            </h2>
+            <h3>
+                And I'm an <span class="multiple-text"></span>
+            </h3>
 
             <p>
-                Computer Science and Engineering student with hands-on
-                experience in Data Analytics, Full-Stack Web Development,
-                Generative AI, RAG systems and AI-powered applications.
+                Computer Science and Engineering student passionate about
+                Artificial Intelligence, Generative AI, Retrieval-Augmented
+                Generation (RAG), Large Language Models (LLMs), Machine Learning
+                and Full Stack Development. I enjoy building practical
+                AI-powered applications that solve real-world problems.
             </p>
 
-            <div class="buttons">
+            <div class="social-media">
+
+                <a href="https://github.com/sheikh123-beep"
+                    target="_blank" aria-label="GitHub">
+                    <i class='bx bxl-github'></i>
+                </a>
+
+                <a href="https://www.linkedin.com/in/sheikh-abubakar-869866420/"
+                    target="_blank" aria-label="LinkedIn">
+                    <i class='bx bxl-linkedin'></i>
+                </a>
+
+                <a href="mailto:realabu0786@gmail.com"
+                    aria-label="Email">
+                    <i class='bx bx-envelope'></i>
+                </a>
+
+            </div>
+
+            <div class="home-buttons">
 
                 <a href="#contact" class="btn">
                     Contact Me
                 </a>
 
-                <a
-                    href="SHEIKH ABUBAKAR CV1.pdf"
-                    class="btn btn-outline"
-                    download
-                >
-                    <i class="fa-solid fa-download"></i>
-                    Download CV
-                </a>
-
-            </div>
-
-            <div class="social">
-
-                <a
-                    href="https://github.com/sheikh123-beep"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                >
-                    <i class="fab fa-github"></i>
-                </a>
-
-                <a
-                    href="https://www.linkedin.com/in/sheikh-abubakar-869866420/"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                >
-                    <i class="fab fa-linkedin"></i>
-                </a>
-
-                <a href="mailto:realabu0786@gmail.com">
-                    <i class="fas fa-envelope"></i>
+                <a href="resume.pdf" class="btn" download>
+                    <i class='bx bx-download'></i>
+                    Download Resume
                 </a>
 
             </div>
@@ -144,10 +120,8 @@
 
             <div class="image-ring">
 
-                <img
-                    src="profile.png.jpg"
-                    alt="Sheikh Abubakar"
-                >
+                <img src="profile.png.jpg"
+                    alt="Sheikh Abubakar">
 
             </div>
 
@@ -156,77 +130,61 @@
     </section>
 
 
-    <!-- ================= ABOUT ================= -->
+    <!-- ABOUT SECTION -->
 
-    <section id="about">
+    <section class="about" id="about">
 
-        <h2 class="title">
-            About Me
+        <h2 class="heading">
+            About <span>Me</span>
         </h2>
 
         <div class="about-container">
 
             <div class="about-image">
 
-                <img
-                    src="profile.png.jpg"
-                    alt="Sheikh Abubakar"
-                >
+                <img src="profile.png.jpg"
+                    alt="Sheikh Abubakar">
 
             </div>
 
 
             <div class="about-content">
 
-                <h3>
-                    Computer Science & Engineering Student
-                </h3>
+                <h3>AI Engineer & Full Stack Developer</h3>
 
                 <p>
                     I am Sheikh Abubakar, a Computer Science and Engineering
-                    student at Parul University. I am interested in Data
-                    Analytics, Generative AI, Machine Learning, RAG systems
-                    and Software Development.
+                    student at Parul University with a strong interest in
+                    Artificial Intelligence, Machine Learning and modern
+                    software development.
                 </p>
 
                 <p>
-                    I enjoy building practical applications using Python,
-                    SQL, React.js, Node.js, Django, REST APIs and modern AI
-                    technologies. I am currently strengthening my skills
-                    through hands-on projects in Generative AI, RAG and
-                    Machine Learning.
+                    I have hands-on experience building Generative AI
+                    applications, Retrieval-Augmented Generation (RAG)
+                    systems, LLM-powered solutions and AI-integrated
+                    full-stack applications.
                 </p>
 
+                <p>
+                    My technical interests include Python, FastAPI,
+                    ChromaDB, Ollama, LLM integration, embeddings,
+                    machine learning and web application development.
+                </p>
 
-                <div class="info">
+                <div class="about-highlights">
 
-                    <div>
-                        <h4>Name</h4>
-                        <p>Sheikh Abubakar</p>
-                    </div>
-
-                    <div>
-                        <h4>Email</h4>
-
-                        <p>
-                            <a href="mailto:realabu0786@gmail.com">
-                                realabu0786@gmail.com
-                            </a>
-                        </p>
-
-                    </div>
-
-                    <div>
-                        <h4>University</h4>
-                        <p>Parul University</p>
-                    </div>
-
-                    <div>
-                        <h4>CGPA</h4>
-                        <p>7.5 / 10</p>
-                    </div>
+                    <span>AI Engineering</span>
+                    <span>Generative AI</span>
+                    <span>RAG & LLMs</span>
+                    <span>Machine Learning</span>
+                    <span>Full Stack Development</span>
 
                 </div>
+
+                <a href="#projects" class="btn">
+                    Explore My Work
+                </a>
 
             </div>
 
@@ -235,90 +193,98 @@
     </section>
 
 
-    <!-- ================= SKILLS ================= -->
+    <!-- SKILLS SECTION -->
 
-    <section id="skills">
+    <section class="skills" id="skills">
 
-        <h2 class="title">
-            Technical Skills
+        <h2 class="heading">
+            My <span>Skills</span>
         </h2>
-
 
         <div class="skills-container">
 
-            <div class="skill">
-                <i class="fa-brands fa-python"></i>
-                <span>Python</span>
-            </div>
 
             <div class="skill">
-                <i class="fa-solid fa-database"></i>
-                <span>SQL</span>
+                <i class='bx bxl-python'></i>
+                <h3>Python</h3>
+                <p>Programming, automation and AI development.</p>
             </div>
 
-            <div class="skill">
-                <i class="fa-solid fa-file-excel"></i>
-                <span>Excel</span>
-            </div>
 
             <div class="skill">
-                <i class="fa-solid fa-chart-column"></i>
-                <span>Power BI</span>
+                <i class='bx bx-brain'></i>
+                <h3>Generative AI</h3>
+                <p>Building applications powered by generative AI.</p>
             </div>
 
-            <div class="skill">
-                <i class="fa-brands fa-react"></i>
-                <span>React.js</span>
-            </div>
 
             <div class="skill">
-                <i class="fa-brands fa-node-js"></i>
-                <span>Node.js</span>
+                <i class='bx bx-bot'></i>
+                <h3>LLMs & RAG</h3>
+                <p>LLM integration, embeddings and retrieval systems.</p>
             </div>
 
-            <div class="skill">
-                <i class="fa-solid fa-server"></i>
-                <span>Django</span>
-            </div>
 
             <div class="skill">
-                <i class="fa-solid fa-code"></i>
-                <span>REST APIs</span>
+                <i class='bx bx-network-chart'></i>
+                <h3>AI Agents</h3>
+                <p>Agent-based AI application development.</p>
             </div>
 
-            <div class="skill">
-                <i class="fa-solid fa-brain"></i>
-                <span>Machine Learning</span>
-            </div>
 
             <div class="skill">
-                <i class="fa-solid fa-robot"></i>
-                <span>Generative AI</span>
+                <i class='bx bx-data'></i>
+                <h3>Machine Learning</h3>
+                <p>Machine learning concepts and data analysis.</p>
             </div>
 
-            <div class="skill">
-                <i class="fa-solid fa-magnifying-glass"></i>
-                <span>RAG</span>
-            </div>
 
             <div class="skill">
-                <i class="fa-solid fa-diagram-project"></i>
-                <span>LangChain</span>
+                <i class='bx bx-server'></i>
+                <h3>FastAPI</h3>
+                <p>Building backend APIs and AI services.</p>
             </div>
 
-            <div class="skill">
-                <i class="fa-solid fa-vector-square"></i>
-                <span>Vector Database</span>
-            </div>
 
             <div class="skill">
-                <i class="fa-brands fa-git-alt"></i>
-                <span>Git</span>
+                <i class='bx bx-layer'></i>
+                <h3>ChromaDB</h3>
+                <p>Vector storage and semantic search.</p>
             </div>
 
+
             <div class="skill">
-                <i class="fa-brands fa-github"></i>
-                <span>GitHub</span>
+                <i class='bx bx-code-alt'></i>
+                <h3>Full Stack Development</h3>
+                <p>Frontend and backend application development.</p>
+            </div>
+
+
+            <div class="skill">
+                <i class='bx bx-data'></i>
+                <h3>SQL & Databases</h3>
+                <p>SQL, MySQL and MongoDB.</p>
+            </div>
+
+
+            <div class="skill">
+                <i class='bx bxl-javascript'></i>
+                <h3>JavaScript</h3>
+                <p>Interactive and responsive web applications.</p>
+            </div>
+
+
+            <div class="skill">
+                <i class='bx bx-chart'></i>
+                <h3>Data Analytics</h3>
+                <p>Data analysis and visualization.</p>
+            </div>
+
+
+            <div class="skill">
+                <i class='bx bxl-github'></i>
+                <h3>Git & GitHub</h3>
+                <p>Version control and project management.</p>
             </div>
 
         </div>
@@ -326,117 +292,56 @@
     </section>
 
 
-    <!-- ================= PROJECTS ================= -->
+    <!-- PROJECTS SECTION -->
 
-    <section id="projects">
+    <section class="projects" id="projects">
 
-        <h2 class="title">
-            Projects
+        <h2 class="heading">
+            My <span>Projects</span>
         </h2>
 
+        <div class="projects-container">
 
-        <div class="projects">
 
-
-            <!-- ===== CREATOR BRIDGE ===== -->
+            <!-- PROJECT 1 -->
 
             <div class="card">
 
                 <div class="project-icon">
-                    <i class="fa-solid fa-users"></i>
+                    <i class='bx bx-brain'></i>
                 </div>
 
                 <div class="card-content">
 
                     <span class="project-type">
-                        Full-Stack / AI
+                        Generative AI / RAG
                     </span>
 
-                    <h3>
-                        Creator Bridge
-                    </h3>
+                    <h3>RepoMind AI</h3>
 
                     <p>
-                        A full-stack creator-brand collaboration platform
-                        designed to connect creators with brands through
-                        creator discovery, campaign management, private
-                        communication and AI-based creator matching.
+                        An intelligent GitHub repository analyst that
+                        uses RAG, embeddings and LLMs to understand
+                        repository code and answer developer questions.
                     </p>
 
                     <div class="tech">
-
-                        <span>React.js</span>
-                        <span>Vite</span>
-                        <span>Tailwind CSS</span>
-                        <span>Node.js</span>
-                        <span>Express.js</span>
-                        <span>REST APIs</span>
-                        <span>MongoDB</span>
-                        <span>Mongoose</span>
-                        <span>JWT</span>
-                        <span>Email OTP</span>
-                        <span>Gemini API</span>
-
-                    </div>
-
-                    <a
-                        href="https://github.com/sheikh123-beep"
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        class="project-link"
-                    >
-                        GitHub
-                        <i class="fa-solid fa-arrow-up-right-from-square"></i>
-                    </a>
-
-                </div>
-
-            </div>
-
-
-            <!-- ===== RAG PROJECT ===== -->
-
-            <div class="card">
-
-                <div class="project-icon">
-                    <i class="fa-solid fa-robot"></i>
-                </div>
-
-                <div class="card-content">
-
-                    <span class="project-type">
-                        Generative AI
-                    </span>
-
-                    <h3>
-                        RAG-Based AI Knowledge Assistant
-                    </h3>
-
-                    <p>
-                        AI knowledge assistant using Retrieval-Augmented
-                        Generation to retrieve information from documents
-                        and provide context-aware answers using embeddings
-                        and vector search.
-                    </p>
-
-                    <div class="tech">
-
                         <span>Python</span>
-                        <span>LangChain</span>
-                        <span>LLM</span>
-                        <span>ChromaDB</span>
+                        <span>FastAPI</span>
                         <span>RAG</span>
-
+                        <span>ChromaDB</span>
+                        <span>Ollama</span>
+                        <span>Streamlit</span>
                     </div>
 
-                    <a
-                        href="https://github.com/sheikh123-beep"
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        class="project-link"
-                    >
-                        GitHub
-                        <i class="fa-solid fa-arrow-up-right-from-square"></i>
+                    <a href="https://repomind-ai-rmdx8bskcy6kd7mfvicuy7.streamlit.app/"
+                        target="_blank" class="project-link">
+                        Live Demo <i class='bx bx-link-external'></i>
+                    </a>
+
+                    <a href="https://github.com/sheikh123-beep"
+                        target="_blank" class="project-link">
+                        GitHub <i class='bx bxl-github'></i>
                     </a>
 
                 </div>
@@ -444,97 +349,164 @@
             </div>
 
 
-            <!-- ===== RESEARCH PROJECT ===== -->
+            <!-- PROJECT 2 -->
 
             <div class="card">
 
                 <div class="project-icon">
-                    <i class="fa-solid fa-cloud-sun"></i>
+                    <i class='bx bx-code-alt'></i>
                 </div>
 
                 <div class="card-content">
 
                     <span class="project-type">
-                        Data Analysis / Research
+                        Full Stack Development
                     </span>
 
-                    <h3>
-                        Reference Evapotranspiration Analysis
-                    </h3>
+                    <h3>Creator Bridge</h3>
 
                     <p>
-                        Analysis of reference evapotranspiration using
-                        weather and climate data for the Kutch arid region,
-                        Gujarat, supporting data-driven environmental
-                        research.
+                        A full-stack platform designed to connect
+                        creators and businesses through a modern
+                        web application.
                     </p>
 
                     <div class="tech">
+                        <span>React</span>
+                        <span>JavaScript</span>
+                        <span>Node.js</span>
+                        <span>Express</span>
+                        <span>MongoDB</span>
+                    </div>
 
+                    <a href="https://github.com/sheikh123-beep"
+                        target="_blank" class="project-link">
+                        GitHub <i class='bx bxl-github'></i>
+                    </a>
+
+                </div>
+
+            </div>
+
+
+            <!-- PROJECT 3 -->
+
+            <div class="card">
+
+                <div class="project-icon">
+                    <i class='bx bx-calendar-check'></i>
+                </div>
+
+                <div class="card-content">
+
+                    <span class="project-type">
+                        Web Development
+                    </span>
+
+                    <h3>Online Restaurant Booking System</h3>
+
+                    <p>
+                        A web application that allows customers to
+                        explore restaurants, check available slots
+                        and make table reservations online.
+                    </p>
+
+                    <div class="tech">
+                        <span>HTML</span>
+                        <span>CSS</span>
+                        <span>JavaScript</span>
+                        <span>Backend</span>
+                        <span>Database</span>
+                    </div>
+
+                    <a href="https://github.com/sheikh123-beep"
+                        target="_blank" class="project-link">
+                        GitHub <i class='bx bxl-github'></i>
+                    </a>
+
+                </div>
+
+            </div>
+
+
+            <!-- PROJECT 4 -->
+
+            <div class="card">
+
+                <div class="project-icon">
+                    <i class='bx bx-line-chart'></i>
+                </div>
+
+                <div class="card-content">
+
+                    <span class="project-type">
+                        Research / Data Analysis
+                    </span>
+
+                    <h3>Reference Evapotranspiration Analysis</h3>
+
+                    <p>
+                        Research-based analysis of temporal patterns
+                        and assessment of reference evapotranspiration
+                        in the Kutch region of Gujarat.
+                    </p>
+
+                    <div class="tech">
                         <span>Python</span>
-                        <span>Pandas</span>
-                        <span>Data Analysis</span>
                         <span>NASA POWER</span>
-
+                        <span>Google Earth Engine</span>
+                        <span>Data Analysis</span>
                     </div>
-
-                    <a
-                        href="#contact"
-                        class="project-link"
-                    >
-                        Research Project
-                        <i class="fa-solid fa-arrow-right"></i>
-                    </a>
 
                 </div>
 
             </div>
 
 
-            <!-- ===== DATA ANALYTICS PROJECT ===== -->
+        </div>
 
-            <div class="card">
+    </section>
 
-                <div class="project-icon">
-                    <i class="fa-solid fa-chart-line"></i>
+
+    <!-- RESEARCH SECTION -->
+
+    <section class="research" id="research">
+
+        <h2 class="heading">
+            Research & <span>Publication</span>
+        </h2>
+
+        <div class="research-container">
+
+            <div class="research-card">
+
+                <i class='bx bx-book-open'></i>
+
+                <div class="research-meta">
+                    NCCT 2026 | Research Publication
                 </div>
 
-                <div class="card-content">
+                <h3>
+                    Temporal Analysis and Assessment of Reference
+                    Evapotranspiration (ET₀) in Kutch, Gujarat
+                </h3>
 
-                    <span class="project-type">
-                        Data Analytics
-                    </span>
+                <p>
+                    Research focused on temporal analysis and assessment
+                    of reference evapotranspiration in the Kutch region
+                    using environmental and climate-related datasets.
+                </p>
 
-                    <h3>
-                        Data Analytics Dashboard
-                    </h3>
+                <p>
+                    The study involved data analysis and validation
+                    using NASA POWER datasets and Google Earth Engine.
+                </p>
 
-                    <p>
-                        Data analysis and visualization project focused
-                        on cleaning datasets, extracting useful insights
-                        and presenting information through interactive
-                        dashboards.
-                    </p>
-
-                    <div class="tech">
-
-                        <span>Excel</span>
-                        <span>SQL</span>
-                        <span>Power BI</span>
-                        <span>Python</span>
-
-                    </div>
-
-                    <a
-                        href="https://github.com/sheikh123-beep"
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        class="project-link"
-                    >
-                        GitHub
-                        <i class="fa-solid fa-arrow-up-right-from-square"></i>
-                    </a>
-
+                <div class="tech">
+                    <span>Research</span>
+                    <span>Python</span>
+                    <span>NASA POWER</span>
+                    <span>Google Earth Engine</span>
                 </div>
 
             </div>
@@ -544,14 +516,13 @@
     </section>
 
 
-    <!-- ================= EDUCATION ================= -->
+    <!-- EDUCATION SECTION -->
 
-    <section id="education">
+    <section class="education" id="education">
 
-        <h2 class="title">
-            Education
+        <h2 class="heading">
+            My <span>Education</span>
         </h2>
-
 
         <div class="education-container">
 
@@ -559,26 +530,23 @@
             <div class="education-card">
 
                 <div class="education-icon">
-                    <i class="fa-solid fa-graduation-cap"></i>
+                    <i class='bx bxs-graduation'></i>
                 </div>
 
                 <div>
 
-                    <span>
-                        2023 - 2027
-                    </span>
-
-                    <h3>
-                        B.Tech in Computer Science & Engineering
-                    </h3>
-
-                    <h4>
-                        Parul University
-                    </h4>
+                    <h3>Bachelor of Technology - Computer Science</h3>
 
                     <p>
-                        CGPA:
-                        <strong>7.5 / 10</strong>
+                        Parul University
+                    </p>
+
+                    <p>
+                        2023 - 2027
+                    </p>
+
+                    <p>
+                        CGPA: 7.5 / 10
                     </p>
 
                 </div>
@@ -589,53 +557,87 @@
             <div class="education-card">
 
                 <div class="education-icon">
-                    <i class="fa-solid fa-school"></i>
+                    <i class='bx bx-book'></i>
                 </div>
 
                 <div>
 
-                    <span>
-                        Higher Secondary
-                    </span>
+                    <h3>Higher Secondary Education - Science</h3>
 
-                    <h3>
-                        Science
-                    </h3>
-
-                    <h4>
+                    <p>
                         National Infotech
-                    </h4>
+                    </p>
 
                 </div>
 
             </div>
+
 
         </div>
 
     </section>
 
 
-    <!-- ================= CONTACT ================= -->
+    <!-- CERTIFICATIONS SECTION -->
 
-    <section id="contact">
+    <section class="certifications" id="certifications">
 
-        <h2 class="title">
-            Contact Me
+        <h2 class="heading">
+            My <span>Certifications</span>
         </h2>
 
+        <div class="certifications-container">
+
+
+            <div class="certification-card">
+
+                <i class='bx bx-certification'></i>
+
+                <h3>RAG and Agentic AI</h3>
+
+                <p>
+                    IBM Professional Certificate
+                </p>
+
+            </div>
+
+
+            <div class="certification-card">
+
+                <i class='bx bx-award'></i>
+
+                <h3>AI Foundations</h3>
+
+                <p>
+                    Simplilearn
+                </p>
+
+            </div>
+
+
+        </div>
+
+    </section>
+
+
+    <!-- CONTACT SECTION -->
+
+    <section class="contact" id="contact">
+
+        <h2 class="heading">
+            Contact <span>Me</span>
+        </h2>
 
         <div class="contact-container">
 
 
             <div class="contact-item">
 
-                <i class="fas fa-envelope"></i>
+                <i class='bx bx-envelope'></i>
 
                 <div>
 
-                    <h3>
-                        Email
-                    </h3>
+                    <h3>Email</h3>
 
                     <a href="mailto:realabu0786@gmail.com">
                         realabu0786@gmail.com
@@ -648,13 +650,11 @@
 
             <div class="contact-item">
 
-                <i class="fas fa-phone"></i>
+                <i class='bx bx-phone'></i>
 
                 <div>
 
-                    <h3>
-                        Phone
-                    </h3>
+                    <h3>Phone</h3>
 
                     <a href="tel:+919234893239">
                         +91 9234893239
@@ -667,20 +667,15 @@
 
             <div class="contact-item">
 
-                <i class="fab fa-linkedin"></i>
+                <i class='bx bxl-linkedin'></i>
 
                 <div>
 
-                    <h3>
-                        LinkedIn
-                    </h3>
+                    <h3>LinkedIn</h3>
 
-                    <a
-                        href="https://www.linkedin.com/in/sheikh-abubakar-869866420/"
-                        target="_blank"
-                        rel="noopener noreferrer"
-                    >
-                        Sheikh Abubakar
+                    <a href="https://www.linkedin.com/in/sheikh-abubakar-869866420/"
+                        target="_blank">
+                        Connect on LinkedIn
                     </a>
 
                 </div>
@@ -690,55 +685,42 @@
 
             <div class="contact-item">
 
-                <i class="fab fa-github"></i>
+                <i class='bx bxl-github'></i>
 
                 <div>
 
-                    <h3>
-                        GitHub
-                    </h3>
+                    <h3>GitHub</h3>
 
-                    <a
-                        href="https://github.com/sheikh123-beep"
-                        target="_blank"
-                        rel="noopener noreferrer"
-                    >
-                        sheikh123-beep
+                    <a href="https://github.com/sheikh123-beep"
+                        target="_blank">
+                        View GitHub Profile
                     </a>
 
                 </div>
 
             </div>
 
+
         </div>
 
     </section>
 
 
-    <!-- ================= FOOTER ================= -->
+    <!-- FOOTER -->
 
-    <footer>
-
-        <h2>
-            Sheikh Abubakar
-        </h2>
+    <footer class="footer">
 
         <p>
-            Data Analytics • Generative AI • RAG • Software Development
-        </p>
-
-        <p>
-            Designed & Developed with ❤️
-        </p>
-
-        <p>
-            © 2026 Sheikh Abubakar. All Rights Reserved.
+            Copyright &copy; <span id="current-year"></span>
+            Sheikh Abubakar | All Rights Reserved.
         </p>
 
     </footer>
 
 
-    <!-- ================= JAVASCRIPT ================= -->
+    <!-- JAVASCRIPT -->
+
+    <script src="https://cdn.jsdelivr.net/npm/typed.js@2.0.12"></script>
 
     <script src="script.js"></script>
 
